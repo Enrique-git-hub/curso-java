@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+
+$(document).ready(function(){
+	$.ajax({
+		type:"GET",
+		dataType: "html",
+		url: "./ServletTest",
+		success: function(){
+			console.log("peticion correcta")
+		} 
+	})
+})

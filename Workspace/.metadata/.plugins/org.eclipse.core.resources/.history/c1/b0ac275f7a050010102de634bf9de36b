@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package controllers;
+
+/**
+ * 
+ */
+public class AlquilerController implements IAlquilerController {
+
+	@Override
+	public String listarAlquileres(String username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,55 @@
+4:59:27 Widget Closed: BrowserFrame
+4:59:27 Microsoft.Shutdown.OnWindowClosing
+4:59:27 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+4:59:27 Microsoft.Browser_Removed
+4:59:27 Microsoft.Shutdown.OnWindowClosing
+4:59:27 Microsoft.Shutdown.OnWindowClosing_MaybeClearBrowsingDataOnExit
+4:59:27 Microsoft.Shutdown.OnWindowClosing_ClearBrowsingDataOnExitNotInProgress
+4:59:27 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+4:59:27 Tab170 RenderProcessGone
+4:59:27 Browser170 Close Tab170 at 0
+4:59:27 Tab170 WebContentsDestroyed
+4:59:27 Microsoft.Shutdown.OnWindowClosing
+4:59:27 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+4:59:27 Widget Closed: BrowserFrame
+4:59:27 Microsoft.Shutdown.OnWindowClosing
+4:59:27 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+4:59:27 Microsoft.Browser_Removed
+4:59:27 Microsoft.Shutdown.OnWindowClosing
+4:59:27 Microsoft.Shutdown.OnWindowClosing_MaybeClearBrowsingDataOnExit
+4:59:27 Microsoft.Shutdown.OnWindowClosing_ClearBrowsingDataOnExitNotInProgress
+4:59:27 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+4:59:27 Tab156 RenderProcessGone
+4:59:27 Browser156 Close Tab156 at 0
+4:59:27 Tab156 WebContentsDestroyed
+4:59:27 Microsoft.Shutdown.OnWindowClosing
+4:59:27 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+4:59:27 Widget Closed: BrowserFrame
+4:59:27 Microsoft.Shutdown.OnWindowClosing
+4:59:27 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+4:59:27 Microsoft.Last_Browser_Removed
+0:00:00 Startup
+0:00:00 Microsoft.DeleteProfileHelper.CleanUpEphemeralProfiles
+0:00:00 Microsoft.DeleteProfileHelper.CleanUpDeletedProfiles
+0:00:00 Microsoft.NewBrowser_Popup
+0:00:00 Microsoft.BrowserList.AddBrowser
+0:00:00 Browser1 Insert active Tab1 at 0
+0:00:00 Tab1 StartNav1 #auto_toplevel
+0:00:00 Tab1 StartNav2 #typed
+0:00:00 Tab1 FinishNav1
+0:00:00 Tab1 PageLoad
+0:00:00 Tab1 FinishNav2
+0:00:00 Tab1 PageLoad
+0:00:00 Startup
+0:00:00 Microsoft.DeleteProfileHelper.CleanUpEphemeralProfiles
+0:00:00 Microsoft.DeleteProfileHelper.CleanUpDeletedProfiles
+0:00:00 Microsoft.NewBrowser_Popup
+0:00:00 Microsoft.BrowserList.AddBrowser
+0:00:00 Browser1 Insert active Tab1 at 0
+0:00:00 Tab1 StartNav1 #auto_toplevel
+0:00:00 Tab1 StartNav2 #typed
+0:00:00 Tab1 FinishNav1
+0:00:00 Tab1 PageLoad
+0:00:01 Tab1 FinishNav2
+0:00:01 Tab1 PageLoad
+0:00:08 Microsoft.Shutdown.OnWindowClosing

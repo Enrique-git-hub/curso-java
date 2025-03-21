@@ -1,0 +1,8 @@
+package beans;
+
+public class Usuario {
+	
+	private String username, contrasena, nombre, apellidos;
+	private double saldo;
+	private boolean premium;
+}

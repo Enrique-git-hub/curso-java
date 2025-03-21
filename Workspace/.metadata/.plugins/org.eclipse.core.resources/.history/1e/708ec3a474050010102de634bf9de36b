@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+
+var username = new URL(location.href).searchParams.get("username")
+var user
+
+$(document).ready(function(){
+	fillUsuario();
+})
+
+function fillUsuario(){
+	$.ajax({
+					type:"GET",
+					dataType: "html",
+					url: "./ServletUsuarioPedir",
+					data: $.param({
+						username: username
+					}),
+					success: function(result){
+						let parseResult = JSON.parse(result);
+						
+						if (parseResult != false){
+							user = parseResult
+							
+							$("#input-username").val(parseResult.username)
+							$("#input-contrasena").val(parseResult.contrasena)
+							$("#input-nombre").val(parseResult.nombre)
+							$("#input-apellidos").val(parseResult.apellidos)
+							$("#input-email").val(parseResult.email)
+							$("#input-saldo").val(parseResult.saldo.toFixed(2))
+							$("#input-premium").prop("checked",parseResult.premium)
+						 }
+						else
+						{
+							console.log("Error al recuperar los datos del usuario")
+						}
+					} 
+				})
+}

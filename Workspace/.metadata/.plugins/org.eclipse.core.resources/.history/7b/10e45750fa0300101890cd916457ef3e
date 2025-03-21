@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+
+$(document).ready(function(){
+	$("#form-login").submit(function(event){
+		event.preventDefault();
+		autenticarUsuario();
+	})
+})
+
+function autenticarUsuario(){
+	let username = $("#usuario").val();
+	let contrasena = $("#contrasena").val();
+}

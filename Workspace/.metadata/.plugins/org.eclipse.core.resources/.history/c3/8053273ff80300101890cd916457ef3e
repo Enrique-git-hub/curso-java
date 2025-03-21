@@ -1,0 +1,11 @@
+package controllers;
+
+public class UsuarioController implements IUsuarioController {
+
+	@Override
+	public String login(String username, String contrasena) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

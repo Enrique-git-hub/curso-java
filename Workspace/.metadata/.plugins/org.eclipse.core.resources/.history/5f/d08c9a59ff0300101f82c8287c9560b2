@@ -1,0 +1,33 @@
+/**
+ * 
+ */
+
+$(document).ready(function(){
+	$("#btnEntrar").click(function(event){
+		event.preventDefault();
+		autenticarUsuario();
+	})
+})
+
+function autenticarUsuario(){
+	let username = $("#usuario").val();
+	let contrasena = $("#contrasena").val();
+	
+	$.ajax({
+			type:"GET",
+			dataType: "html",
+			url: "./ServletUsuarioLogin",
+			data: $.param({
+				username: username,
+				contrasena: contrasena
+			}),
+			success: function(result){
+				let parseResult = JSON.parse(result)
+					
+				if (parseResult != false){
+					let username = parseResult['username']
+					document.location.href = "home.html?username=" + username;
+ 				}
+			} 
+		})
+}

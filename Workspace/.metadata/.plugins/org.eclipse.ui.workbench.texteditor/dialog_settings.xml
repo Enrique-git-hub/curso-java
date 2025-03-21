@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<section name="java.lang.Class">
+		<item key="replaceBarOpen" value="true"/>
+		<list key="findhistory">
+			<item value="&quot;input"/>
+			<item value="username"/>
+			<item value="email"/>
+			<item value="apellidos"/>
+			<item value="nombre"/>
+			<item value="(fa-sort-up)"/>
+			<item value="(fa-sort-down)"/>
+			<item value="(fa-sort)"/>
+			<item value="fa-sort"/>
+			<item value="&quot;&lt;/td&gt;&quot;"/>
+			<item value="&quot;&lt;td&gt;&quot;"/>
+			<item value="fecha"/>
+		</list>
+		<list key="replacehistory">
+			<item value="titulo"/>
+			<item value="&quot;#input"/>
+			<item value="premium"/>
+			<item value="saldo"/>
+			<item value="email"/>
+			<item value="apellidos"/>
+			<item value="(&quot;fa-sort-up&quot;)"/>
+			<item value="(&quot;fa-sort-down&quot;)"/>
+			<item value="(&quot;fa-sort&quot;)"/>
+			<item value="&apos;&lt;/td&gt;&apos;"/>
+			<item value="&apos;&lt;td&gt;&apos;"/>
+			<item value="fechaAlquiler"/>
+		</list>
+	</section>
+</section>

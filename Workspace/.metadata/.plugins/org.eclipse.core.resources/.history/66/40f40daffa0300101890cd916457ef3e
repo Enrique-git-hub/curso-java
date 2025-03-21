@@ -1,0 +1,31 @@
+/**
+ * 
+ */
+
+$(document).ready(function(){
+	$("#form-login").submit(function(event){
+		event.preventDefault();
+		autenticarUsuario();
+	})
+})
+
+function autenticarUsuario(){
+	let username = $("#usuario").val();
+	let contrasena = $("#contrasena").val();
+	
+	$.ajax({
+				type:"GET",
+				dataType: "html",
+				url: "./ServletUsuarioLogin",
+				data: $.param({
+					username: username,
+					contrasena: contrasena
+				}),
+				success: function(data){
+					let parseData = JSON.parse(data)
+					console.log("peticion correcta")
+					console.log(parseData)
+					console.log("Primer libro: "+parseData[0]["titulo"])
+				} 
+			})
+}

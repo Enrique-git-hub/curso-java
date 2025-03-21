@@ -1,0 +1,175 @@
+/**
+ * 
+ */
+
+var username = new URL(location.href).searchParams.get("username")
+var user
+
+$(document).ready(function(){
+	$(function (){
+		$(`[data-toggle="tooltip"]`).tooltip();
+	})
+	
+	getUsuario().then(function() {
+		$("#user-saldo").html(user.saldo.toFixed(2)+"€")
+	})
+	
+	getLibros(false,"ASC")
+	
+	$("#form-login").submit(function(event){
+		event.preventDefault();
+		autenticarUsuario();
+	})
+	
+	$("#form-register").submit(function(event){
+		event.preventDefault();
+		registrarUsuario();
+	})
+})
+
+async function getUsuario(){
+	await $.ajax({
+				type:"GET",
+				dataType: "html",
+				url: "./ServletUsuarioPedir",
+				data: $.param({
+					username: username
+				}),
+				success: function(result){
+					let parseResult = JSON.parse(result);
+					
+					if (parseResult != false){
+						user = parseResult
+					 }
+					else
+					{
+						console.log("Error al recuperar los datos del usuario")
+					}
+				} 
+			})
+}
+
+function getLibros(ordenar,orden){
+	$.ajax({
+			type:"GET",
+			dataType: "html",
+			url: "./ServletUsuarioPedir",
+			data: $.param({
+				ordenar: ordenar,
+				orden: orden
+			}),
+			success: function(result){
+				let parseResult = JSON.parse(result);
+						
+				if (parseResult != false){
+					mostrarLibros(parsedResult)
+				 }
+				else
+				{
+					console.log("Error al recuperar los datos del usuario")
+				}
+			} 
+		})
+}
+
+function mostrarLibros(libros){
+	let contenido = "";
+	
+	$.each(libros, function(index, libro) {
+		
+		libro = JSON.parse(libro)
+		let precio
+		
+		if (libro.copia > 0) {
+			if (user.premium && libro.novedad){
+				precio = (2 - (2 * 0.1))
+			}
+			else if (user.premium && !libro.novedad){
+				precio = (1 - (1 * 0.1))
+			}
+			else if (!user.premium && libro.novedad){
+				precio = 2
+			}
+			else if (user.premium && !libro.novedad){
+				precio = 1
+			}
+		}
+	})
+}
+
+function autenticarUsuario(){
+	let username = $("#usuario").val();
+	let contrasena = $("#contrasena").val();
+	console.log(username, ' ', contrasena)
+	
+	$.ajax({
+			type:"GET",
+			dataType: "html",
+			url: "./ServletUsuarioLogin",
+			data: $.param({
+				username: username,
+				contrasena: contrasena
+			}),
+			success: function(result){
+				let parseResult = JSON.parse(result);
+					
+				if (parseResult != false){
+					$("#login-error").addClass("d-none");
+					let username = parseResult['username'];
+					document.location.href = "home.html?username=" + username;
+ 				}
+				else
+				{
+					$("#login-error").removeClass("d-none");
+				}
+			} 
+		})
+}
+
+function registrarUsuario(){
+	let username = $("#input-username").val();
+	let contrasena = $("#input-contrasena").val();
+	let contrasenaConfirm = $("#input-contrasena-repeat").val();
+	let nombre = $("#input-nombre").val();
+	let apellidos = $("#input-apellidos").val();
+	let email = $("#input-email").val();
+	let saldo = $("#input-saldo").val();
+	let premium = $("#input-premium").prop("checked");
+	
+	if (contrasena == contrasenaConfirm) {
+		
+		$.ajax({
+					type:"GET",
+					dataType: "html",
+					url: "./ServletUsuarioRegister",
+					data: $.param({
+						username: username,
+						contrasena: contrasena,
+						nombre: nombre,
+						apellidos: apellidos,
+						email: email,
+						saldo: saldo,
+						premium: premium
+					}),
+					success: function(result){
+						let parseResult = JSON.parse(result);
+						
+						if (parseResult != false){
+							$("#register-error").addClass("d-none");
+							let username = parseResult['username'];
+							document.location.href = "home.html?username=" + username;
+							}
+							else
+							{
+								$("#register-error").removeClass("d-none");
+								$("#register-error").html("Error en el registro de usuario");
+							}
+						
+					} 
+				})
+		
+	}else{
+		$("#register-error").removeClass("d-none");
+		$("#register-error").html("Las contraseñas no coinciden");
+	}
+}

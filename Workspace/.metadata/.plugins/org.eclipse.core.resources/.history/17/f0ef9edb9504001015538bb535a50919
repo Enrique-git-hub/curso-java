@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+.bg-login-image{
+	background: url("../img/biblioteca.jpg");
+	background-position: center;
+	background-size: cover;
+	border: 0px
+}
